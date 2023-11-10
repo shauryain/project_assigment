@@ -39,10 +39,10 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <h3 class="m-4">All</h3>
+        <h3 class="m-4">All Student</h3>
         <div class="row">
             <div class="col-12">
-                {% if student %}
+                {% if students %}
 
                 <div class="card bg-light ms-4 me-4 mb-4 ">
                     <div class="card-header">
@@ -60,7 +60,7 @@
                                         <th scope="col">Last Name</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Field of study</th>
-                                        <th scope="col">Column heading</th>
+                                        <th scope="col">gpa</th>
                                         <th scope="col">Column heading</th>
                                     </tr>
                                 </thead>
@@ -73,12 +73,43 @@
                                         <td>{{ student.email }}</td>
                                         <td>{{ student.field_of_study }}</td>
                                         <td>{{ student.gpa }}</td>
-                                        <td> ACTIONS </td>
+                                        <td>
+                                            <button type="button" class="btn btn-success me-1"
+                                                href="{% url 'view_student' student.id %}" data-bs-toggle="model"
+                                                data-bs-target="#myModel {{student.id}}">
+                                                <i class="fa-solid fa-circle-info fg-lg"></i>
+                                            </button>
+                                            <!-- Model -View Student -->
+                                            <div class="modal" id="#myModel {{student.id}}" tabindex="-1" aria-labelledby="myModelLabel1" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Modal title</h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"
+                                                                fdprocessedid="b0rau">
+                                                                <span aria-hidden="true"></span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <p>Modal body text goes here.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary"
+                                                                fdprocessedid="du0oio">Save changes</button>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal"
+                                                                fdprocessedid="m6z6mb">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
                                     {% endfor %}
-                                
-                                    
-                                    
+
+
+
                                 </tbody>
                             </table>
                         </div>
