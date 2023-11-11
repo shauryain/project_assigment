@@ -23,3 +23,8 @@ creating this thing then we create url inside app
 url:-hold the important path and (help to nevigate between template)
 
 using the model first we have to form the connectivity between project and backend
+
+
+[admin]
+name:admin
+password:root123
